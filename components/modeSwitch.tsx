@@ -3,6 +3,7 @@
 import * as React from "react";
 import { MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
 export function ModeSwitcher() {
@@ -41,33 +42,39 @@ export function ModeSwitcher() {
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className="
         relative h-9 w-9 rounded-full
-        border border-black/10 dark:border-white/10
-        bg-white/60 dark:bg-zinc-900/60
+        border border-zinc-200 dark:border-zinc-800
+        bg-white/80 dark:bg-zinc-950/80
         backdrop-blur-md
-        hover:bg-white dark:hover:bg-zinc-800
+        hover:bg-zinc-50 dark:hover:bg-zinc-900
         transition-all duration-300
-        ring-1 ring-transparent hover:ring-black/10 dark:hover:ring-white/10
+        ring-1 ring-transparent hover:ring-zinc-200 dark:hover:ring-zinc-800
+        flex items-center justify-center overflow-hidden
       "
     >
-      {/* Sun */}
-      <SunIcon
-        className="
-          absolute h-4 w-4 text-zinc-800
-          transition-all duration-300
-          rotate-0 scale-100
-          dark:-rotate-90 dark:scale-0
-        "
-      />
+      <motion.div
+        animate={{
+          rotate: isDark ? 90 : 0,
+          scale: isDark ? 0 : 1,
+          opacity: isDark ? 0 : 1,
+        }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="absolute"
+      >
+        <SunIcon className="h-4 w-4 text-orange-500" />
+      </motion.div>
 
-      {/* Moon */}
-      <MoonIcon
-        className="
-          absolute h-4 w-4 text-zinc-200
-          transition-all duration-300
-          rotate-90 scale-0
-          dark:rotate-0 dark:scale-100
-        "
-      />
+      <motion.div
+        initial={false}
+        animate={{
+          rotate: isDark ? 0 : -90,
+          scale: isDark ? 1 : 0,
+          opacity: isDark ? 1 : 0,
+        }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="absolute"
+      >
+        <MoonIcon className="h-4 w-4 text-blue-400" />
+      </motion.div>
 
       <span className="sr-only">Toggle theme</span>
     </Button>

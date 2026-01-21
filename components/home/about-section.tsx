@@ -72,7 +72,7 @@ export function AboutSection() {
                 className="
                   flex items-center gap-3 p-4 rounded-2xl
                   bg-linear-to-r from-white/20 to-white/10 dark:from-neutral-900/30 dark:to-neutral-900/20
-                  backdrop-blur-xl
+                  backdrop-blur-md
                   border border-white/20 dark:border-neutral-800/40
                   shadow-lg shadow-orange-500/10 dark:shadow-orange-400/20
                   hover:shadow-xl hover:shadow-orange-500/20 dark:hover:shadow-orange-400/25
@@ -96,7 +96,7 @@ export function AboutSection() {
           className="
             relative aspect-square rounded-3xl overflow-hidden
             bg-linear-to-br from-white/20 via-white/10 to-white/5 dark:from-neutral-900/25 via-neutral-900/15 to-neutral-900/10
-            backdrop-blur-2xl
+            backdrop-blur-md
             shadow-2xl shadow-orange-500/15 dark:shadow-orange-400/20
             border border-white/15 dark:border-neutral-800/30
           "
@@ -108,7 +108,7 @@ export function AboutSection() {
           <div className="absolute inset-0 bg-white/5 dark:bg-black/10 backdrop-blur-sm" />
 
           <img
-            src="/developer-portrait-professional.jpg"
+            src="/logo.svg"
             alt="Websetgo Developer"
             className="w-full h-full object-cover relative z-10"
           />

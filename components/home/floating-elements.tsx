@@ -1,29 +1,31 @@
 "use client";
 
-import { motion } from "motion/react";
-import { useEffect, useState } from "react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { useEffect } from "react";
 
 export function FloatingElements() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const springConfig = { stiffness: 100, damping: 30 };
+  const springX = useSpring(x, springConfig);
+  const springY = useSpring(y, springConfig);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth - 0.5) * 20,
-        y: (e.clientY / window.innerHeight - 0.5) * 20,
-      });
+      x.set((e.clientX / window.innerWidth - 0.5) * 20);
+      y.set((e.clientY / window.innerHeight - 0.5) * 20);
     };
 
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  }, [x, y]);
 
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden">
       {/* ───────────── Floating Card 1 ───────────── */}
       <motion.div
-        animate={{ x: mousePosition.x * 0.5, y: mousePosition.y * 0.5 }}
-        transition={{ type: "spring", stiffness: 100, damping: 30 }}
+        style={{ x: springX, y: springY }}
         className="absolute top-1/4 left-[10%] hidden lg:block"
       >
         <motion.div
@@ -47,8 +49,10 @@ export function FloatingElements() {
 
       {/* ───────────── Floating Chart ───────────── */}
       <motion.div
-        animate={{ x: mousePosition.x * -0.3, y: mousePosition.y * -0.3 }}
-        transition={{ type: "spring", stiffness: 100, damping: 30 }}
+        style={{
+          x: useTransform(springX, (val) => val * -0.3),
+          y: useTransform(springY, (val) => val * -0.3)
+        }}
         className="absolute top-1/3 right-[8%] hidden lg:block"
       >
         <motion.div
@@ -77,8 +81,10 @@ export function FloatingElements() {
 
       {/* ───────────── Growth Arrow ───────────── */}
       <motion.div
-        animate={{ x: mousePosition.x * 0.4, y: mousePosition.y * 0.4 }}
-        transition={{ type: "spring", stiffness: 100, damping: 30 }}
+        style={{
+          x: useTransform(springX, (val) => val * 0.4),
+          y: useTransform(springY, (val) => val * 0.4)
+        }}
         className="absolute bottom-1/3 left-[15%] hidden lg:block"
       >
         <svg width="80" height="80" viewBox="0 0 80 80">

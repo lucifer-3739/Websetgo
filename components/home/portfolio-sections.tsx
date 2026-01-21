@@ -8,17 +8,17 @@ const projects = [
   {
     title: "E-commerce Solution",
     category: "Small Business",
-    image: "/modern-ecommerce-website.png",
+    image: "/logo.svg",
   },
   {
     title: "Local Service Platform",
     category: "Lead Generation",
-    image: "/local-service-business-website.jpg",
+    image: "/logo.svg",
   },
   {
     title: "Corporate Landing Page",
     category: "Brand Awareness",
-    image: "/corporate-business-landing-page.jpg",
+    image: "/logo.svg",
   },
 ];
 
@@ -27,8 +27,8 @@ export function PortfolioSection() {
     <section id="portfolio" className="py-24 px-4 bg-card/20">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Demo Projects</h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-zinc-50 mb-6">Demo Projects</h2>
+          <p className="text-zinc-600 dark:text-zinc-300 text-lg max-w-2xl mx-auto">
             A glimpse into the high-converting websites I've built for
             businesses like yours.
           </p>
@@ -46,7 +46,7 @@ export function PortfolioSection() {
             >
               <Image
                 src={project.image || "/placeholder.svg"}
-                alt={project.title}
+                alt={`${project.title} - ${project.category} Website Demo by Websetgo`}
                 width={800}
                 height={600}
                 className="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-110"

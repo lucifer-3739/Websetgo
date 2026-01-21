@@ -55,11 +55,11 @@ export function Footer() {
             className="lg:col-span-2 space-y-6"
           >
             <Image
-              src="/images/gemini-generated-image-itt85vitt85vitt8.png"
+              src="/company-logo.png"
               alt="Websetgo Logo"
               width={160}
-              height={45}
-              className="h-12 w-auto drop-shadow-lg"
+              height={50}
+              className="h-12 w-auto drop-shadow-lg object-contain"
             />
             <p className="text-muted-foreground dark:text-neutral-300 max-w-md leading-relaxed text-lg">
               Premium web development and SEO solutions that help businesses

@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion, useScroll, useTransform, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { ModeSwitcher } from "@/components/modeSwitch";
 
 const navItems = [
   { name: "Services", href: "#services" },
@@ -17,10 +18,9 @@ const navItems = [
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  /* 🔥 Scroll-based glass intensity */
+  /* 🔥 Scroll-based styling */
   const { scrollY } = useScroll();
-  const blur = useTransform(scrollY, [0, 120], [12, 24]);
-  const bgOpacity = useTransform(scrollY, [0, 120], [0.08, 0.18]);
+  const bgOpacity = useTransform(scrollY, [0, 120], [0.08, 0.4]);
 
   return (
     <motion.nav
@@ -33,15 +33,15 @@ export function Navbar() {
         {/* 🧊 Single Glass Surface */}
         <motion.div
           style={{
-            backdropFilter: `blur(${blur}px)`,
-            backgroundColor: `rgba(255,255,255,${bgOpacity})`,
+            backdropFilter: `blur(12px)`,
           }}
           className="
             relative overflow-hidden
             rounded-2xl px-6 py-3
             flex items-center justify-between
-            dark:bg-neutral-900/40
-            shadow-[0_10px_40px_rgba(15,23,42,0.35)]
+            bg-white/70 dark:bg-zinc-900/60
+            border border-white/20 dark:border-white/10
+            shadow-[0_10px_40px_rgba(0,0,0,0.1)]
             dark:shadow-[0_10px_60px_rgba(0,0,0,0.65)]
           "
         >
@@ -63,9 +63,9 @@ export function Navbar() {
             <Image
               src="/logo.svg"
               alt="Websetgo Logo"
-              width={140}
-              height={40}
-              className="h-10 w-auto"
+              width={160}
+              height={50}
+              className="h-10 w-auto object-contain"
             />
           </Link>
 
@@ -76,8 +76,9 @@ export function Navbar() {
                 key={item.name}
                 href={item.href}
                 className="
-                  text-white dark:text-neutral-200
-                  hover:text-neutral-950 dark:hover:text-white
+                  text-foreground/80
+                  dark:text-neutral-200
+                  hover:text-orange-500 dark:hover:text-orange-400
                   transition-colors text-sm font-medium
                 "
               >
@@ -85,67 +86,80 @@ export function Navbar() {
               </a>
             ))}
 
-            <Button
-              className="
-                bg-orange-500/90 hover:bg-orange-500
-                text-white font-semibold px-6
-                shadow-[0_10px_30px_rgba(248,113,113,0.35)]
-              "
-            >
-              Get Free Consultation
-            </Button>
+            <div className="flex items-center gap-4 border-l border-foreground/10 pl-8 ml-2">
+              <ModeSwitcher />
+              <Button
+                className="
+                  bg-orange-500 hover:bg-orange-600
+                  text-white font-semibold px-6
+                  shadow-[0_4px_12px_rgba(249,115,22,0.3)]
+                "
+              >
+                Get Consultation
+              </Button>
+            </div>
           </div>
 
           {/* Mobile Toggle */}
-          <button
-            className="md:hidden text-neutral-900 dark:text-white relative z-10"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="flex items-center gap-4 md:hidden relative z-10">
+            <ModeSwitcher />
+            <button
+              className="text-neutral-900 dark:text-white"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </motion.div>
 
         {/* 📱 Mobile Menu */}
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-            className="
-              md:hidden mt-3 rounded-2xl p-4
-              bg-white/15 dark:bg-neutral-900/50
-              backdrop-blur-xl
-              shadow-xl
-            "
-          >
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="
-                  block py-3
-                  text-neutral-700 dark:text-neutral-200
-                  hover:text-neutral-950 dark:hover:text-white
-                  transition-colors
-                "
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </a>
-            ))}
-
-            <Button
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0, marginTop: 0 }}
+              animate={{ opacity: 1, height: "auto", marginTop: 12 }}
+              exit={{ opacity: 0, height: 0, marginTop: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
               className="
-                w-full mt-4
-                bg-orange-500/90 hover:bg-orange-500
-                text-white font-semibold
-                shadow-[0_10px_30px_rgba(248,113,113,0.35)]
+                md:hidden overflow-hidden rounded-2xl
+                bg-white/80 dark:bg-zinc-900/90
+                backdrop-blur-xl border border-white/20 dark:border-white/10
+                shadow-2xl z-50 relative
               "
             >
-              Get Free Consultation
-            </Button>
-          </motion.div>
-        )}
+              <div className="p-4 flex flex-col gap-1">
+                {navItems.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="
+                      block py-3 px-4 rounded-xl
+                      text-zinc-700 dark:text-zinc-200
+                      hover:bg-zinc-100 dark:hover:bg-zinc-800
+                      hover:text-orange-500 dark:hover:text-orange-400
+                      transition-all text-lg font-medium
+                    "
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                ))}
+
+                <Button
+                  className="
+                    w-full mt-4 py-6 text-lg
+                    bg-orange-500 hover:bg-orange-600
+                    text-white font-bold
+                    shadow-[0_10px_30px_rgba(249,115,22,0.3)]
+                    rounded-xl
+                  "
+                >
+                  Get Consultation
+                </Button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </motion.nav>
   );

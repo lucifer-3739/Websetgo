@@ -50,11 +50,11 @@ export function ServicesSection() {
           <span className="text-accent-orange text-sm font-semibold tracking-wider uppercase mb-4 block">
             Our Services
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 text-balance">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-zinc-900 dark:text-zinc-50 mb-6 text-balance">
             Everything You Need to{" "}
-            <span className="text-accent-orange">Dominate Online</span>
+            <span className="text-orange-500 dark:text-orange-400">Dominate Online</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-zinc-600 dark:text-zinc-300 text-lg max-w-2xl mx-auto">
             From stunning websites to top Google rankings, we deliver end-to-end
             digital solutions that drive real business results.
           </p>
@@ -91,12 +91,11 @@ function ServiceCard({
     <motion.div
       whileHover={{ y: -8, scale: 1.02 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className={`group relative h-full ${
-        index === 4 ? "md:col-span-2 lg:col-span-1" : ""
-      }`}
+      className={`group relative h-full ${index === 4 ? "md:col-span-2 lg:col-span-1" : ""
+        }`}
     >
       <div className="absolute inset-0 bg-linear-to-br from-accent-orange/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="relative h-full bg-card/50 backdrop-blur-xl border border-border/50 rounded-2xl p-6 overflow-hidden group-hover:border-accent-orange/30 transition-colors duration-300">
+      <div className="relative h-full bg-card/60 backdrop-blur-md border border-border/50 rounded-2xl p-6 overflow-hidden group-hover:border-accent-orange/30 transition-colors duration-300">
         {/* Glow effect */}
         <div className="absolute top-0 right-0 w-32 h-32 bg-accent-orange/10 rounded-full blur-2xl translate-x-16 -translate-y-16 group-hover:bg-accent-orange/20 transition-colors duration-500" />
 
@@ -105,11 +104,11 @@ function ServiceCard({
             <Icon className="w-7 h-7 text-accent-orange" />
           </div>
 
-          <h3 className="text-xl font-semibold text-foreground mb-3">
+          <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50 mb-3">
             {service.title}
           </h3>
 
-          <p className="text-muted-foreground leading-relaxed">
+          <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed">
             {service.description}
           </p>
         </div>

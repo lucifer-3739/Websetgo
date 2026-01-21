@@ -148,7 +148,9 @@ export function CTASection() {
                   dark:from-orange-400 dark:to-orange-500
                   hover:from-orange-600 hover:to-orange-700
                   dark:hover:from-orange-500 dark:hover:to-orange-600
-                  text-white font-semibold px-8 py-6 text-lg group
+                  text-white font-semibold 
+                  px-6 py-4 md:px-8 md:py-6
+                  text-base md:text-lg group
                   shadow-lg shadow-orange-500/25 dark:shadow-orange-400/30
                   hover:shadow-xl hover:shadow-orange-500/40 dark:hover:shadow-orange-400/45
                   backdrop-blur-sm border border-orange-500/30 dark:border-orange-400/40
@@ -165,7 +167,8 @@ export function CTASection() {
                   hover:bg-green-500/10 dark:hover:bg-green-400/20
                   text-green-600 dark:text-green-400
                   hover:text-green-700 dark:hover:text-green-500
-                  px-8 py-6 text-lg backdrop-blur-sm
+                  px-6 py-4 md:px-8 md:py-6
+                  text-base md:text-lg backdrop-blur-sm
                   hover:shadow-md hover:shadow-green-500/20 dark:hover:shadow-green-400/25
                   bg-white/10 dark:bg-neutral-900/20
                 "
