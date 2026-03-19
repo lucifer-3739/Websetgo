@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion, useScroll, useTransform, AnimatePresence } from "motion/react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,18 +9,14 @@ import { Button } from "@/components/ui/button";
 import { ModeSwitcher } from "@/components/modeSwitch";
 
 const navItems = [
-  { name: "Services", href: "#services" },
-  { name: "Portfolio", href: "#portfolio" },
-  { name: "About", href: "#about" },
-  { name: "Contact", href: "#contact" },
+  { name: "Services", href: "/services" },
+  { name: "Portfolio", href: "/portfolio" },
+  { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
-  /* 🔥 Scroll-based styling */
-  const { scrollY } = useScroll();
-  const bgOpacity = useTransform(scrollY, [0, 120], [0.08, 0.4]);
 
   return (
     <motion.nav
@@ -65,7 +61,14 @@ export function Navbar() {
               alt="Websetgo Logo"
               width={160}
               height={50}
-              className="h-10 w-auto object-contain"
+              className="h-10 w-auto object-contain dark:hidden"
+            />
+            <Image
+              src="/logo-dark.svg"
+              alt="Websetgo Logo"
+              width={160}
+              height={50}
+              className="h-10 w-auto object-contain hidden dark:block"
             />
           </Link>
 

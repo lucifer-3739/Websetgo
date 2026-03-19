@@ -1,0 +1,11 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#fff5eb" />
+  <rect x="50" y="50" width="240" height="300" rx="15" fill="white" stroke="#f97316" stroke-width="2" />
+  <rect x="310" y="50" width="240" height="300" rx="15" fill="white" stroke="#f97316" stroke-width="2" />
+  <rect x="70" y="70" width="200" height="150" rx="10" fill="#fed7aa" />
+  <rect x="330" y="70" width="200" height="150" rx="10" fill="#fed7aa" />
+  <rect x="70" y="240" width="150" height="20" rx="5" fill="#f97316" />
+  <rect x="330" y="240" width="150" height="20" rx="5" fill="#f97316" />
+  <text x="70" y="290" fill="#333" font-family="Arial" font-size="20" font-weight="bold">$199.00</text>
+  <text x="330" y="290" fill="#333" font-family="Arial" font-size="20" font-weight="bold">$89.00</text>
+</svg>

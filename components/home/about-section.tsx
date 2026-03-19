@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Code, Server, Smartphone, Globe } from "lucide-react";
+import Image from "next/image";
 
 export function AboutSection() {
   return (
@@ -31,7 +32,7 @@ export function AboutSection() {
             transition={{ delay: 0.3 }}
             className="text-lg leading-relaxed text-muted-foreground dark:text-neutral-300"
           >
-            I'm a dedicated web developer passionate about helping small
+            I&apos;m a dedicated web developer passionate about helping small
             businesses thrive in the digital landscape. With years of experience
             in modern development practices, I focus on creating tools that
             solve real business problems.
@@ -107,10 +108,17 @@ export function AboutSection() {
           {/* Glass overlay for depth */}
           <div className="absolute inset-0 bg-white/5 dark:bg-black/10 backdrop-blur-sm" />
 
-          <img
+          <Image
             src="/logo.svg"
             alt="Websetgo Developer"
-            className="w-full h-full object-cover relative z-10"
+            fill
+            className="object-cover relative z-10 dark:hidden"
+          />
+          <Image
+            src="/logo-dark.svg"
+            alt="Websetgo Developer"
+            fill
+            className="object-cover relative z-10 hidden dark:block"
           />
 
           {/* Decorative shine */}

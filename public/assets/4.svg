@@ -1,0 +1,12 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#064e3b" />
+  <path d="M 50 350 L 150 250 L 250 300 L 400 150 L 500 100 L 550 120" stroke="#34d399" stroke-width="5" fill="none" />
+  <circle cx="150" cy="250" r="5" fill="white" />
+  <circle cx="250" cy="300" r="5" fill="white" />
+  <circle cx="400" cy="150" r="5" fill="white" />
+  <circle cx="500" cy="100" r="5" fill="white" />
+  <text x="450" y="80" fill="#34d399" font-family="Arial" font-size="24" font-weight="bold">+128%</text>
+  <rect x="50" y="50" width="150" height="80" rx="10" fill="#065f46" />
+  <text x="70" y="90" fill="#a7f3d0" font-family="Arial" font-size="14">Total Balance</text>
+  <text x="70" y="120" fill="white" font-family="Arial" font-size="24">$24,500</text>
+</svg>

@@ -2,15 +2,18 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { AboutSection } from "@/components/home/about-section";
-import { CTASection } from "@/components/home/cta-section";
-import { Footer } from "@/components/home/footer";
-import { HeroSection } from "@/components/home/hero-section";
+import dynamic from "next/dynamic";
 import { Navbar } from "@/components/home/navbar";
-import { PortfolioSection } from "@/components/home/portfolio-sections";
-import { ProcessSection } from "@/components/home/process-section";
-import { ServicesSection } from "@/components/home/services-section";
+import { HeroSection } from "@/components/home/hero-section";
 import { LoadingScreen } from "@/components/LoadingScreen";
+
+// Dynamically import components that are below the fold
+const ServicesSection = dynamic(() => import("@/components/home/services-section").then((mod) => mod.ServicesSection), { ssr: true });
+const CurvedScroll = dynamic(() => import("@/components/scrollanimation/CurvedScroll"), { ssr: true });
+const AboutSection = dynamic(() => import("@/components/home/about-section").then((mod) => mod.AboutSection), { ssr: true });
+const ProcessSection = dynamic(() => import("@/components/home/process-section").then((mod) => mod.ProcessSection), { ssr: true });
+const CTASection = dynamic(() => import("@/components/home/cta-section").then((mod) => mod.CTASection), { ssr: true });
+const Footer = dynamic(() => import("@/components/home/footer").then((mod) => mod.Footer), { ssr: true });
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -57,7 +60,7 @@ export default function Home() {
         </div>
 
         <ServicesSection />
-        <PortfolioSection />
+        <CurvedScroll />
         <AboutSection />
         <ProcessSection />
         <CTASection />
