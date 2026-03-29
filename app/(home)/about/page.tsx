@@ -9,7 +9,7 @@ const Footer = dynamic(() => import("@/components/home/footer").then((mod) => mo
 
 export default function AboutPage() {
   return (
-    <main className="w-full min-h-screen relative overflow-x-hidden pt-20">
+    <main className="w-full min-h-screen relative overflow-x-hidden pt-20 bg-white dark:bg-neutral-950">
       <Navbar />
 
       {/* Hero Section */}
@@ -49,7 +49,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-linear-to-b from-transparent via-orange-50/50 dark:via-orange-950/20 to-transparent pointer-events-none" />
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Core Values</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-zinc-900 dark:text-white">Core Values</h2>
             <p className="text-zinc-500 dark:text-zinc-400">The principles that drive our engineering and marketing excellence.</p>
           </div>
           
@@ -83,7 +83,7 @@ export default function AboutPage() {
                 <div className="w-14 h-14 bg-orange-100 dark:bg-orange-500/20 flex items-center justify-center rounded-2xl mb-6 text-orange-500 dark:text-orange-400">
                   <value.icon className="w-7 h-7" />
                 </div>
-                <h3 className="text-2xl font-bold mb-3">{value.title}</h3>
+                <h3 className="text-2xl font-bold mb-3 text-zinc-900 dark:text-white">{value.title}</h3>
                 <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed text-lg">{value.desc}</p>
               </motion.div>
             ))}
@@ -152,7 +152,7 @@ export default function AboutPage() {
             <motion.div 
               animate={{ y: [0, -20, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-[15%] left-[10%] w-[60%] h-[40%] bg-white/80 dark:bg-black/50 backdrop-blur-md rounded-2xl border border-white/40 dark:border-white/10 shadow-2xl flex items-center justify-center p-8 text-center"
+              className="absolute top-[15%] left-[10%] w-[60%] h-[40%] bg-white/90 dark:bg-black/50 backdrop-blur-md rounded-2xl border border-neutral-200/50 dark:border-white/10 shadow-2xl flex items-center justify-center p-8 text-center"
             >
               <Award className="w-16 h-16 text-orange-500 mb-4" />
             </motion.div>
@@ -175,14 +175,14 @@ export default function AboutPage() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="max-w-5xl mx-auto rounded-[3rem] overflow-hidden relative"
+          className="max-w-5xl mx-auto rounded-[3rem] overflow-hidden relative shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] dark:shadow-none"
         >
-          <div className="absolute inset-0 bg-linear-to-br from-zinc-950 to-zinc-900 dark:from-zinc-900 dark:to-black" />
-          <div className="absolute right-0 top-0 w-1/2 h-full bg-linear-to-l from-orange-500/20 to-transparent blur-3xl pointer-events-none" />
+          <div className="absolute inset-0 bg-linear-to-br from-zinc-50 to-zinc-100 dark:from-zinc-900 dark:to-black border border-zinc-200 dark:border-zinc-800" />
+          <div className="absolute right-0 top-0 w-1/2 h-full bg-linear-to-l from-orange-500/10 dark:from-orange-500/20 to-transparent blur-3xl pointer-events-none" />
           
-          <div className="relative z-10 p-12 md:p-24 text-center text-white">
+          <div className="relative z-10 p-12 md:p-24 text-center text-zinc-900 dark:text-white">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to dominate?</h2>
-            <p className="text-xl text-zinc-300 max-w-2xl mx-auto mb-10">
+            <p className="text-xl text-zinc-600 dark:text-zinc-300 max-w-2xl mx-auto mb-10">
               Don't settle for a mediocre website. Partner with Websetgo to build an authoritative web presence that captures leads 24/7.
             </p>
             <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-10 rounded-xl text-lg transition-transform hover:scale-105 shadow-[0_10px_30px_rgba(249,115,22,0.4)]">

@@ -114,7 +114,7 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <main className="w-full min-h-screen relative overflow-x-hidden pt-20">
+    <main className="w-full min-h-screen relative overflow-x-hidden pt-20 bg-white dark:bg-neutral-950">
       <Navbar />
 
       {/* Hero Section */}
@@ -139,7 +139,7 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-8"
+            className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-8 text-zinc-900 dark:text-white"
           >
             Solutions That <br/>
             <span className="bg-clip-text text-transparent bg-linear-to-r from-orange-500 via-orange-400 to-amber-500">
@@ -233,9 +233,9 @@ export default function ServicesPage() {
 
       {/* ROI / CTA Section */}
       <section className="py-32 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-zinc-950">
+        <div className="absolute inset-0 bg-zinc-50 dark:bg-zinc-950">
           {/* Abstract Grid Background */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-size-[14px_24px] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[14px_24px] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
         </div>
 
         <motion.div 
@@ -245,13 +245,13 @@ export default function ServicesPage() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto relative z-10 text-center"
         >
-          <div className="w-20 h-20 mx-auto bg-orange-500/20 backdrop-blur-xl rounded-2xl flex items-center justify-center mb-8 border border-orange-500/30">
-            <TrendingUp className="w-10 h-10 text-orange-500" />
+          <div className="w-20 h-20 mx-auto bg-orange-500/10 dark:bg-orange-500/20 backdrop-blur-xl rounded-2xl flex items-center justify-center mb-8 border border-orange-500/20 dark:border-orange-500/30">
+            <TrendingUp className="w-10 h-10 text-orange-600 dark:text-orange-500" />
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-zinc-900 dark:text-white mb-6">
             Ready to Accelerate Your <span className="bg-clip-text text-transparent bg-linear-to-r from-orange-400 to-amber-500">Digital Growth?</span>
           </h2>
-          <p className="text-xl text-zinc-400 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-zinc-600 dark:text-zinc-400 mb-10 max-w-2xl mx-auto">
             Stop losing leads to your competitors. Let's build a digital presence that dominates your market and drives real revenue.
           </p>
           
@@ -259,7 +259,7 @@ export default function ServicesPage() {
             <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white border-0 h-14 px-8 text-lg font-bold shadow-[0_0_40px_rgba(249,115,22,0.4)] hover:scale-105 transition-transform">
               Book a Free Strategy Call
             </Button>
-            <Button size="lg" variant="outline" className="h-14 px-8 text-lg font-bold border-zinc-700 hover:bg-zinc-800 text-zinc-300 hover:text-white">
+            <Button size="lg" variant="outline" className="h-14 px-8 text-lg font-bold border-zinc-200 hover:bg-zinc-100 text-zinc-700 hover:text-zinc-900 dark:border-zinc-700 dark:hover:bg-zinc-800 dark:text-zinc-300 dark:hover:text-white">
               View Our Work
             </Button>
           </div>

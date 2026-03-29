@@ -72,11 +72,11 @@ export function AboutSection() {
                 transition={{ delay: 0.6 + i * 0.1 }}
                 className="
                   flex items-center gap-3 p-4 rounded-2xl
-                  bg-linear-to-r from-white/20 to-white/10 dark:from-neutral-900/30 dark:to-neutral-900/20
+                  bg-linear-to-r from-neutral-50 to-white dark:from-neutral-900/30 dark:to-neutral-900/20
                   backdrop-blur-md
-                  border border-white/20 dark:border-neutral-800/40
-                  shadow-lg shadow-orange-500/10 dark:shadow-orange-400/20
-                  hover:shadow-xl hover:shadow-orange-500/20 dark:hover:shadow-orange-400/25
+                  border border-neutral-200/80 dark:border-neutral-800/40
+                  shadow-lg shadow-orange-500/5 dark:shadow-orange-400/20
+                  hover:shadow-xl hover:shadow-orange-500/10 dark:hover:shadow-orange-400/25
                   transition-all duration-300
                 "
               >
@@ -96,10 +96,10 @@ export function AboutSection() {
           transition={{ delay: 0.7 }}
           className="
             relative aspect-square rounded-3xl overflow-hidden
-            bg-linear-to-br from-white/20 via-white/10 to-white/5 dark:from-neutral-900/25 via-neutral-900/15 to-neutral-900/10
+            bg-linear-to-br from-neutral-50/80 via-white/50 to-neutral-100/30 dark:from-neutral-900/25 dark:via-neutral-900/15 dark:to-neutral-900/10
             backdrop-blur-md
-            shadow-2xl shadow-orange-500/15 dark:shadow-orange-400/20
-            border border-white/15 dark:border-neutral-800/30
+            shadow-2xl shadow-orange-500/10 dark:shadow-orange-400/20
+            border border-neutral-200/80 dark:border-neutral-800/30
           "
         >
           {/* Inner glow overlay */}
@@ -122,7 +122,7 @@ export function AboutSection() {
           />
 
           {/* Decorative shine */}
-          <div className="absolute top-10 right-10 w-20 h-20 bg-white/20 dark:bg-neutral-200/20 rounded-full blur-xl" />
+          <div className="absolute top-10 right-10 w-20 h-20 bg-orange-500/20 dark:bg-orange-400/20 rounded-full blur-xl" />
         </motion.div>
       </div>
     </section>

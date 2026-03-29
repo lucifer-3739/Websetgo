@@ -6,10 +6,11 @@ import dynamic from "next/dynamic";
 import { Navbar } from "@/components/home/navbar";
 import { HeroSection } from "@/components/home/hero-section";
 import { LoadingScreen } from "@/components/LoadingScreen";
+import ProjectsCard from "@/components/home/projects-section";
 
 // Dynamically import components that are below the fold
 const ServicesSection = dynamic(() => import("@/components/home/services-section").then((mod) => mod.ServicesSection), { ssr: true });
-const CurvedScroll = dynamic(() => import("@/components/scrollanimation/CurvedScroll"), { ssr: true });
+const CurvedScroll = dynamic(() => import("@/components/home/projects-section"), { ssr: true });
 const AboutSection = dynamic(() => import("@/components/home/about-section").then((mod) => mod.AboutSection), { ssr: true });
 const ProcessSection = dynamic(() => import("@/components/home/process-section").then((mod) => mod.ProcessSection), { ssr: true });
 const CTASection = dynamic(() => import("@/components/home/cta-section").then((mod) => mod.CTASection), { ssr: true });
@@ -60,7 +61,7 @@ export default function Home() {
         </div>
 
         <ServicesSection />
-        <CurvedScroll />
+        <ProjectsCard />
         <AboutSection />
         <ProcessSection />
         <CTASection />
