@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/home/navbar";
 import { Footer } from "@/components/home/footer";
-import { Mail, Phone, MapPin, ArrowRight, Send } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { ContactForm } from "@/components/contact/contact-form";
 
 export const metadata = {
   title: "Contact | Websetgo",
@@ -71,69 +72,7 @@ export default function ContactPage() {
 
             {/* Contact Form */}
             <div className="lg:col-span-3">
-              <form className="p-8 md:p-12 bg-white dark:bg-zinc-900/40 backdrop-blur-md rounded-[2rem] border border-zinc-200 dark:border-zinc-800 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] dark:shadow-none">
-                <h2 className="text-3xl font-bold text-zinc-900 dark:text-white mb-8">Send us a message</h2>
-                
-                <div className="grid md:grid-cols-2 gap-6 mb-6">
-                  <div className="space-y-2">
-                    <label className="text-sm font-semibold text-zinc-700 dark:text-zinc-300">First Name</label>
-                    <input 
-                      type="text" 
-                      placeholder="John" 
-                      className="w-full bg-zinc-50 dark:bg-black/40 border border-zinc-200 dark:border-zinc-800 rounded-xl px-4 py-4 text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all font-medium"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-semibold text-zinc-700 dark:text-zinc-300">Last Name</label>
-                    <input 
-                      type="text" 
-                      placeholder="Doe" 
-                      className="w-full bg-zinc-50 dark:bg-black/40 border border-zinc-200 dark:border-zinc-800 rounded-xl px-4 py-4 text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all font-medium"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2 mb-6">
-                  <label className="text-sm font-semibold text-zinc-700 dark:text-zinc-300">Email Address</label>
-                  <input 
-                    type="email" 
-                    placeholder="john@company.com" 
-                    className="w-full bg-zinc-50 dark:bg-black/40 border border-zinc-200 dark:border-zinc-800 rounded-xl px-4 py-4 text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all font-medium"
-                  />
-                </div>
-
-                <div className="space-y-2 mb-6">
-                  <label className="text-sm font-semibold text-zinc-700 dark:text-zinc-300">What are you interested in?</label>
-                  <select 
-                    title="Service Type"
-                    className="w-full bg-zinc-50 dark:bg-black/40 border border-zinc-200 dark:border-zinc-800 rounded-xl px-4 py-4 text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all font-medium"
-                  >
-                    <option value="">Select a service...</option>
-                    <option value="web-dev">Web Development</option>
-                    <option value="ecommerce">E-Commerce</option>
-                    <option value="seo">SEO & Marketing</option>
-                    <option value="ui-design">UI/UX Design</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div className="space-y-2 mb-8">
-                  <label className="text-sm font-semibold text-zinc-700 dark:text-zinc-300">Message</label>
-                  <textarea 
-                    rows={5}
-                    placeholder="Tell us about your project..." 
-                    className="w-full bg-zinc-50 dark:bg-black/40 border border-zinc-200 dark:border-zinc-800 rounded-xl px-4 py-4 text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all font-medium resize-none"
-                  ></textarea>
-                </div>
-
-                <button 
-                  type="button"
-                  className="w-full flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98] shadow-[0_10px_30px_rgba(249,115,22,0.3)] text-lg"
-                >
-                  <Send className="w-5 h-5 shrink-0" />
-                  Send Message
-                </button>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </div>
