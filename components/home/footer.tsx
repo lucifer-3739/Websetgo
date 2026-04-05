@@ -164,10 +164,10 @@ export function Footer() {
               >
                 <Mail className="w-5 h-5 text-orange-500 dark:text-orange-400 shrink-0" />
                 <a
-                  href="mailto:webstegocompany@gmail.com"
+                  href="mailto:hello@websetgo.com"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  webstegocompany@gmail.com
+                  hello@websetgo.com
                 </a>
               </motion.li>
               <motion.li
@@ -188,10 +188,10 @@ export function Footer() {
               >
                 <Phone className="w-5 h-5 text-orange-500 dark:text-orange-400 shrink-0" />
                 <a
-                  href="tel:+919769489715"
+                  href="tel:+15551234567"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  +91 9769489715
+                  +1 (555) 123-4567
                 </a>
               </motion.li>
               <motion.li
@@ -230,7 +230,7 @@ export function Footer() {
             transition={{ delay: 0.5 }}
             className="text-muted-foreground dark:text-neutral-400 text-sm bg-white/10 dark:bg-neutral-900/20 backdrop-blur-sm px-4 py-2 rounded-xl"
           >
-            © 2026 Websetgo. All rights reserved.
+            © 2025 Websetgo. All rights reserved.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 10 }}

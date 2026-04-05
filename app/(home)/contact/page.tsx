@@ -34,9 +34,9 @@ export default function ContactPage() {
                 
                 <div className="space-y-6">
                   {[
-                    { icon: Mail, label: "Email", value: "webstegocompany@gmail.com", desc: "For general inquiries" },
-                    { icon: Phone, label: "Phone", value: "+91 9769489715", desc: "Mon-Fri from 9am to 6pm IST" },
-                    { icon: MapPin, label: "Studio", value: "123 Innovation Drive", desc: "Mumbai, Maharashtra 400042" },
+                    { icon: Mail, label: "Email", value: "hello@websetgo.com", desc: "For general inquiries" },
+                    { icon: Phone, label: "Phone", value: "+1 (555) 123-4567", desc: "Mon-Fri from 9am to 6pm PST" },
+                    { icon: MapPin, label: "Studio", value: "123 Innovation Drive", desc: "San Francisco, CA 94105" },
                   ].map((item, idx) => (
                     <div key={idx} className="flex items-start gap-4 group cursor-pointer">
                       <div className="w-12 h-12 bg-orange-100 dark:bg-orange-500/10 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300 rounded-xl flex items-center justify-center text-orange-600 dark:text-orange-400 shrink-0 shadow-sm border border-orange-200 dark:border-orange-500/20">
